@@ -37,11 +37,22 @@ void insert_at_end(Node **head, int data){
 	temp->next = new_node;
 }
 
+void print_list(Node **head){
+	Node *temp = *head;
+
+	while(temp != NULL){
+		printf("Data: %d\n", temp->data);
+		temp = temp->next;
+	}
+}
+
 int main(){
 
 	Node *list = NULL;
 	insert_at_end(&list, 10);
 	insert_at_end(&list, 20);
 	insert_at_end(&list, 30);
+
+	print_list(&list);
 	
 }
