@@ -46,6 +46,15 @@ void print_list(Node **head){
 	}
 }
 
+Node* search(Node **head, int target){
+	Node *temp = *head;
+
+	while(temp != NULL && temp->data != target){
+		temp = temp->next;
+	}
+	return temp;
+}
+
 int main(){
 
 	Node *list = NULL;
@@ -54,5 +63,14 @@ int main(){
 	insert_at_end(&list, 30);
 
 	print_list(&list);
-	
+
+	int target = 30;
+	Node *result = search(&list, target);
+	if(result != NULL){
+		printf("Found target\n");
+	}	else {
+		printf("Target not found\n");
+	}
+
+	return 0;
 }
